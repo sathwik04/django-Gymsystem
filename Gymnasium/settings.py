@@ -133,17 +133,18 @@ USE_TZ = True
 
 
 
-django_heroku.settings(locals())
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/images/'
 
 WALLPAPER_FILES = os.path.normpath(MEDIA_ROOT+'/wallpaper')
 WALLPAPER_URL = os.path.normpath(MEDIA_URL+'/wallpaper/')
@@ -152,6 +153,7 @@ PHOTOS_FILES = os.path.normpath(MEDIA_ROOT+'/photos')
 PHOTOS_URL = os.path.normpath(MEDIA_URL+'/photos/')
 
 
+django_heroku.settings(locals())
 
 LOGGING = {
     'version': 1,
