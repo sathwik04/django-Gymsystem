@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='member',
             name='dob',
-            field=models.DateField(default='dd/mm/yyyy'),
+            field=models.DateField(null=True),
         ),
     ]
